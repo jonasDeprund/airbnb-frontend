@@ -1,6 +1,7 @@
 import React from 'react';
 import { sanityClient } from '../../sanity';
 import { isMultiple } from '../../utils';
+import Image from '../../components/Image';
 
 const Property = ({
   title,
@@ -21,6 +22,14 @@ const Property = ({
       <h1>
         <b>{title}</b>
       </h1>
+      <div className="images-section">
+        <Image identifier="main-image" image={mainImage} />
+        <div className="sub-images-section">
+          {images.map((_key, image) => (
+            <Image identifier="image" image={image} />
+          ))}
+        </div>
+      </div>
       <h2>
         <b>
           {propertyType} hosted by {host?.name}
