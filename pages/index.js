@@ -2,7 +2,6 @@ import React from 'react';
 import { sanityClient } from '../sanity';
 
 const Home = ({ properties }) => {
-  console.log(properties);
   return (
     <div>
       <h1>Hello</h1>
@@ -10,9 +9,11 @@ const Home = ({ properties }) => {
   );
 };
 
+// Synchronize backend and frontend
 export const getServerSideProps = async () => {
-  const query = '*[_type == "property"]';
+  const query = '*[ _type == "property"]';
   const properties = await sanityClient.fetch(query);
+
   if (!properties.length) {
     return {
       props: {
