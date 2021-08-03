@@ -44,3 +44,39 @@ a {
   text-align: center;
   background: linear-gradient(135deg, rgb(255, 56, 92) 20%, rgb(189, 30, 89));
 }
+
+.images-section {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 500px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.sub-images-section {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.main-image {
+  width: 50%;
+  height: 270px;
+  overflow: hidden;
+}
+
+.main-image img {
+  width: 100%;
+}
+
+.section {
+  margin: 20px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.information {
+  width: 60%;
+}
