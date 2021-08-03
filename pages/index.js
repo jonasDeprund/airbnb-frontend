@@ -1,10 +1,29 @@
 import React from 'react';
-import { sanityClient } from '../sanity';
+import { sanityClient, urlFor } from '../sanity';
+import Link from 'next/link';
 
 const Home = ({ properties }) => {
   return (
     <div>
-      <h1>Hello</h1>
+      {properties && (
+        <div className="main">
+          <div className="feed-container">
+            <h1>Places to stay near you</h1>
+            <div className="feed">
+              {properties.map((property) => (
+                <Link href={`property/${property.slug.current}`}>
+                  <div key={property._id} className="card">
+                    <img src={urlFor(property.mainImage)} alt="" />
+                    <h3>{property.title}</h3>
+                    <h3>Price per night {property.pricePerNight}€</h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="map"></div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
