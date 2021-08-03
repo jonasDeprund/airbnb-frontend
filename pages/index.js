@@ -1,6 +1,7 @@
 import React from 'react';
 import { sanityClient, urlFor } from '../sanity';
 import Link from 'next/link';
+import DashboardMap from '../components/DashboardMap';
 
 const Home = ({ properties }) => {
   return (
@@ -20,7 +21,9 @@ const Home = ({ properties }) => {
                 </Link>
               ))}
             </div>
-            <div className="map"></div>
+          </div>
+          <div className="map">
+            <DashboardMap properties={properties} />
           </div>
         </div>
       )}
